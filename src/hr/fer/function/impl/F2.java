@@ -15,4 +15,9 @@ public class F2 implements IFunction {
         result[1] = 8 * (x[1] - 2);
         return result;
     }
+
+    @Override
+    public double[] staringPoint(double... x) {
+        return new double[]{0.1, 0.3};
+    }
 }

@@ -15,4 +15,9 @@ public class F3 implements IFunction {
         result[1] = 2 * (x[1] + 3);
         return result;
     }
+
+    @Override
+    public double[] staringPoint(double... x) {
+        return new double[]{0, 0};
+    }
 }

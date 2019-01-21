@@ -20,12 +20,7 @@ public class GradientDescent {
             }
             unimodalF.setPoint(xx);
 
-            var gSum = 0;
-            for (var g : grad) {
-                gSum += Math.pow(g, 2);
-            }
-
-            if (Math.sqrt(gSum) <= epsilon) {
+            if (gradEuclidSum(grad) <= epsilon) {
                 break;
             }
         }
@@ -43,15 +38,18 @@ public class GradientDescent {
             }
             unimodalF.setPoint(xx);
 
-            var gSum = 0;
-            for (var g : grad) {
-                gSum += Math.pow(g, 2);
-            }
-
-            if (Math.sqrt(gSum) <= epsilon) {
+            if (gradEuclidSum(grad) <= epsilon) {
                 break;
             }
         }
         return xx;
+    }
+
+    private static double gradEuclidSum(double[] grad) {
+        double gSum = 0;
+        for (var g : grad) {
+            gSum += Math.pow(g, 2);
+        }
+        return Math.sqrt(gSum);
     }
 }
